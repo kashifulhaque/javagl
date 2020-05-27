@@ -23,6 +23,7 @@ public class BasicsLWJGL {
     private float sp = 0.0f;
     private boolean swapColor = false;
 
+    /* Methods */
     private void init() {
         glfwSetErrorCallback(errorCallback = GLFWErrorCallback.createPrint(System.err));
 
