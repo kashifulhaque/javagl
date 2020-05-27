@@ -17,8 +17,6 @@ public class BasicsLWJGL {
     private GLFWKeyCallback keyCallback;
 
     private long window;
-    private final int windowHeight = 720;
-    private final int windowWidth = 1280;
 
     private float sp = 0.0f;
     private boolean swapColor = false;
@@ -34,6 +32,8 @@ public class BasicsLWJGL {
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
+        int windowWidth = 1280;
+        int windowHeight = 720;
         window = glfwCreateWindow(windowWidth, windowHeight, "QUBE", NULL, NULL);
 
         if(window == NULL)
@@ -49,6 +49,7 @@ public class BasicsLWJGL {
         });
 
         GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+        assert vidmode != null;
         glfwSetWindowPos(
                 window,
                 (vidmode.width() - windowWidth) / 2,
@@ -101,7 +102,8 @@ public class BasicsLWJGL {
         System.out.println("OpenGL extensions supported by my GPU: ");
 
         String extensions = glGetString(GL_EXTENSIONS);
-        String[] extArr = extensions.split("\\ ");
+        assert extensions != null;
+        String[] extArr = extensions.split(" ");
 
         for (String extAr : extArr)
             System.out.println(extAr);

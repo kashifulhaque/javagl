@@ -17,8 +17,6 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 public class Main {
 
     private long window;
-    private final int windowWidth = 1280;
-    private final int windowHeight = 720;
 
     public void run() {
         System.out.println("LWJGL version: " + Version.getVersion());
@@ -53,6 +51,8 @@ public class Main {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
         /* Create the window */
+        int windowHeight = 720;
+        int windowWidth = 1280;
         window = glfwCreateWindow(windowWidth, windowHeight, "GUI Windows generated using Graphics Library", NULL, NULL);
 
         if(window == NULL) {
