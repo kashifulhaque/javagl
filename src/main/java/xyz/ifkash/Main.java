@@ -5,6 +5,7 @@ import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.system.MemoryStack;
+import xyz.ifkash.learning.BasicsLWJGL;
 
 import java.nio.IntBuffer;
 
@@ -118,7 +119,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // Run the GL loop
-        new Main().run();
+        BasicsLWJGL qube = new BasicsLWJGL();
+        qube.run();
     }
 }
